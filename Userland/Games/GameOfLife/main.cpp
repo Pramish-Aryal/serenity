@@ -41,16 +41,16 @@ ErrorOr<int> serenity_main(Main::Arguments arguments)
     TRY(Core::System::unveil("/res", "r"));
     TRY(Core::System::unveil(nullptr, nullptr));
 
-    auto app_icon = TRY(GUI::Icon::try_create_default_icon("app-gameoflife"sv));
+    auto app_icon = TRY(GUI::Icon::try_create_default_icon("app-game-of-life-new"sv));
 
     auto window = TRY(GUI::Window::try_create());
     window->set_icon(app_icon.bitmap_for_size(16));
 
-    size_t board_columns = 35;
-    size_t board_rows = 35;
+    size_t board_columns = 60;
+    size_t board_rows = 60;
 
     window->set_double_buffering_enabled(false);
-    window->set_title("Game Of Life");
+    window->set_title("Conway's Game Of Life");
 
     auto main_widget = TRY(window->set_main_widget<GUI::Widget>());
     TRY(main_widget->load_from_gml(game_of_life_gml));

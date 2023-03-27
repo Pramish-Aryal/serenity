@@ -1,0 +1,5 @@
+[App]
+Name=Metaball
+Executable=/bin/Metaball
+Category=Demos/Screensaver
+ExcludeFromSystemMenu=true
